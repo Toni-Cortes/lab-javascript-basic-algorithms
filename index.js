@@ -58,14 +58,14 @@ if (hacker1.localeCompare(hacker2)<0){
     }
  
     //BONUS
-    let longText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id sapien odio. Proin sagittis nunc in mauris sodales, a placerat libero efficitur. Sed a lacus lacus. Donec feugiat quis nisi sed lacinia. Proin vestibulum magna ut erat pulvinar dignissim. Suspendisse sed volutpat libero, at efficitur tellus. Aliquam tincidunt, tortor vitae tempus placerat, nisi nisi sollicitudin mi, non cursus sapien urna ultricies tortor. Nullam fringilla justo eget congue interdum. Integer viverra a eros ut commodo. Ut ut ligula vel justo rhoncus aliquam a vitae enim. Aenean egestas mattis pretium. Curabitur dapibus elit vitae orci porttitor finibus.';
+    let longText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id sapien odio. Proin sagittis nunc in mauris sodales, a placerat libero efficitur. Sed a lacus lacus. Donec feugiat quis nisi sed lacinia. Proin vestibulum magna ut erat pulvinar dignissim. Suspendisse sed volutpat libero, at efficitur et tellus. Aliquam tincidunt, tortor vitae tempus placerat, nisi nisi sollicitudin mi, non cursus sapien urna ultricies tortor. Nullam fringilla justo eget congue interdum. Integer viverra a eros ut commodo. Ut ut ligula vel et justo rhoncus aliquam a vitae enim. Aenean egestas mattis pretium. Curabitur dapibus elit vitae orci porttitor finibus.';
 
-    let wordsArray = '';
+    let wordsArray = [];
     let position = 0;
 
     for (let i = 0; i<=longText.length; i++){
         if((longText[i]===' ') || (i===longText.length)){
-            wordsArray += longText.slice(position,[i])
+            wordsArray.push(longText.slice(position+1,[i]))
             position = i;
             }
         
@@ -74,4 +74,13 @@ if (hacker1.localeCompare(hacker2)<0){
 
     console.log(wordsArray);
     console.log(wordsArray.length);
+
+    let etCounter = 0;
+
+    for (i=0;i<wordsArray.length;i++){
+        if (wordsArray[i]==='et'){
+            etCounter++;
+        }
+    }
+    console.log(`There are ${etCounter} et's`);
     
